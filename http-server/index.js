@@ -27,12 +27,6 @@ fs.readFile("home.html", (err, home) => {
     homeContent = home;
 });
 
-fs.readFile("home.html", (err, home) => {
-    if (err) {
-        throw err;
-    }
-    homeContent = home;
-});
 fs.readFile("project.html", (err, project) => {
     if (err) {
         throw err;
