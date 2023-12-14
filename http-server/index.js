@@ -37,13 +37,13 @@ fs.readFile("project.html", (err, project) => {
     if (err) {
         throw err;
     }
-    projectContent = home;
+    projectContent = project;
 });
-fs.readFile("registration.html", (err, home) => {
+fs.readFile("registration.html", (err, registration) => {
     if (err) {
         throw err;
     }
-    registrationcontent = home;
+    registrationcontent = registration;
 });
 http
     .createServer((request, response) => {
