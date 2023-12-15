@@ -10,7 +10,7 @@ const todoList = () => {
     const overdue = () => {
         // Write the date check condition here and return the array
         // of overdue items accordingly.
-        const currentData = new DataTransfer().toISOString().split("T")[0];
+        const currentData = new Data().toISOString().split("T")[0];
         return all.filter((item) => !item.completed && item.dueDate < currentData);
     };
 
