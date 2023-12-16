@@ -1,52 +1,42 @@
 const todoList = () => {
     const all = [];
+
     const add = (todoItem) => {
         all.push(todoItem);
     };
+
     const markAsComplete = (index) => {
         all[index].completed = true;
     };
 
     const overdue = () => {
-        // Write the date check condition here and return the array
-        // of overdue items accordingly.
-        const currentData = new Data().toISOString().split("T")[0];
-        return all.filter((item) => !item.completed && item.dueDate < currentData);
+        const today = new Date().toISOString().split("T")[0];
+        return all.filter((item) => !item.completed && item.dueDate < today);
     };
 
     const dueToday = () => {
-        // Write the date check condition here and return the array
-        // of todo items that are due today accordingly.
-        const currentData = new Data().toISOString().split("T")[0];
-        return all.filter((item) => item.dueDate === currentData);
-    }
+        const today = new Date().toISOString().split("T")[0];
+        return all.filter((item) => !item.completed && item.dueDate === today);
+    };
 
     const dueLater = () => {
-        // Write the date check condition here and return the array
-        // of todo items that are due later accordingly.
-        const currentDate = new Date().toISOString().split("T")[0];
-        return all.filter((item) => !item.completed && item.dueDate > currentDate);
-    }
+        const today = new Date().toISOString().split("T")[0];
+        return all.filter(
+            (item) => !item.completed && item.dueDate > today
+        );
+    };
 
     const toDisplayableList = (list) => {
-        // Format the To-Do list here, and return the output string
-        // as per the format given above.
-        const currentDate = new Date().toISOString().split("T")[0];
         let output = "";
-
         list.forEach((item) => {
-            if (item.dueDate === currentDate) {
-                const completedOnSameDate = item.completed && item.dueDate === currentDate;
-                output += `[${completedOnSameDate ? 'x' : ' '}] ${item.title}\n`;
-            } else if (item.dueDate < currentDate) {
-                output += `[ ] ${item.title} ${item.dueDate}\n`;
+            if (item.dueDate === new Date().toISOString().split("T")[0]) {
+                output += `[x] ${item.title}\n`;
             } else {
                 output += `[ ] ${item.title} ${item.dueDate}\n`;
             }
         });
-
-        return output.trim();
-    }
+        return output;
+    };
 
     return {
         all,
@@ -55,7 +45,7 @@ const todoList = () => {
         overdue,
         dueToday,
         dueLater,
-        toDisplayableList
+        toDisplayableList,
     };
 };
 
