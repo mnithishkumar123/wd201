@@ -5,13 +5,7 @@
   "main": "todo.js",
   "scripts": {
     "test": "jest",
-    "prepare": "cd .. && husky install todo-cli/.husky"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "prettier --write ."
-    ]
+    "prepare": "husky install"
   },
   "author": "mnithishkumar <mnithishkumar123@gmail.com>",
   "license": "ISC",
