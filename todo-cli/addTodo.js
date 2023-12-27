@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable no-undef */
+>>>>>>> 2a665d4 (this file is added)
 // addTodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
@@ -22,7 +26,11 @@ const getJSDate = (days) => {
   const { title, dueInDays } = argv;
   if (!title || dueInDays === undefined) {
     throw new Error(
+<<<<<<< HEAD
       'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 '
+=======
+      'title and dueInDays are required. \nSample command: node addTodo.js --title="Buy milk" --dueInDays=-2 ',
+>>>>>>> 2a665d4 (this file is added)
     );
   }
   await createTodo({ title, dueDate: getJSDate(dueInDays), completed: false });

@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 // models/todo.js
 'use strict';
 const {
   Model,Op, where
 } = require('sequelize');
+=======
+"use strict";
+const { Model } = require("sequelize");
+>>>>>>> 2a665d4 (this file is added)
 module.exports = (sequelize, DataTypes) => {
   class Todo extends Model {
     /**
@@ -10,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+<<<<<<< HEAD
     static async addTask(params) {
       return await Todo.create(params);
     }
@@ -115,5 +121,22 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Todo',
   });
+=======
+    static associate(models) {
+      // define association here
+    }
+  }
+  Todo.init(
+    {
+      title: DataTypes.STRING,
+      dueDate: DataTypes.DATEONLY,
+      completed: DataTypes.BOOLEAN,
+    },
+    {
+      sequelize,
+      modelName: "Todo",
+    },
+  );
+>>>>>>> 2a665d4 (this file is added)
   return Todo;
 };

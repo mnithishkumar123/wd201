@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable no-undef */
+>>>>>>> 2a665d4 (this file is added)
 // completeTodo.js
 var argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
